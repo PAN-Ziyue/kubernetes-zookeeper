@@ -1,6 +1,6 @@
-VERSION=1.0-3.4.10
-PROJECT_ID=google_containers
-PROJECT=gcr.io/${PROJECT_ID}
+VERSION=1.0-3.6.2
+PROJECT_ID=pan-ziyue
+PROJECT=ghcr.io/${PROJECT_ID}
 
 all: build
 
