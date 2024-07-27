@@ -1,4 +1,4 @@
-VERSION=1.0-3.6.2
+VERSION=1.0-3.6.1
 PROJECT_ID=pan-ziyue
 PROJECT=ghcr.io/${PROJECT_ID}
 
@@ -8,6 +8,6 @@ build:
 	docker build --pull -t ${PROJECT}/kubernetes-zookeeper:${VERSION} .
 
 push: build
-	gcloud docker -- push ${PROJECT}/kubernetes-zookeeper:${VERSION}
+	docker -- push ${PROJECT}/kubernetes-zookeeper:${VERSION}
 
 .PHONY: all build push
