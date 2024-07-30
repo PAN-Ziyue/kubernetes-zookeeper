@@ -8,7 +8,7 @@ JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 ARG ZK_DIST=zookeeper-3.6.1
 RUN set -x \
     && apt-get update \
-    && apt-get install -y openjdk-8-jre-headless wget netcat-openbsd \
+    && apt-get install -y openjdk-8-jre-headless wget netcat-openbsd dnsutils \
     && wget -q "https://archive.apache.org/dist/zookeeper/$ZK_DIST/apache-$ZK_DIST-bin.tar.gz" \
     && mv "apache-$ZK_DIST-bin.tar.gz" "$ZK_DIST.tar.gz" \
     && tar -xzf "$ZK_DIST.tar.gz" -C /opt \
@@ -48,4 +48,4 @@ RUN set -x \
 	&& chown -R "$ZK_USER:$ZK_USER" /opt/$ZK_DIST $ZK_DATA_DIR $ZK_LOG_DIR $ZK_DATA_LOG_DIR /tmp/zookeeper \
 	&& ln -s /opt/zookeeper/conf/ /usr/etc/zookeeper \
 	&& ln -s /opt/zookeeper/bin/* /usr/bin \
-	&& ln -s /opt/zookeeper/lib/* /usr/share/zookeeper 
+	&& ln -s /opt/zookeeper/lib/* /usr/share/zookeeper
